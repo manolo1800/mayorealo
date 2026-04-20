@@ -7,7 +7,7 @@ services:
     
     # Mapea el puerto 3000 del contenedor al puerto 3000 del host
     ports:
-      - "3000:3000"
+      - "3030:3030"
     
     # Variables de entorno para producción
     environment:
@@ -22,7 +22,7 @@ services:
     
     # Health check para verificar que la aplicación esté funcionando
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3030"]
       interval: 30s
       timeout: 10s
       retries: 3

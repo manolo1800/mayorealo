@@ -65,6 +65,16 @@ export function PersonalInfoStep({ formData, handleInputChange, errors }: Person
             placeholder="+58 212 1234567"
           />
         </FormField>
+
+        <FormField label="Clave de Usuario" error={errors.personalPassword}>
+          <Input
+            name="personalPassword"
+            type="password"
+            value={formData.personalPassword}
+            onChange={handleInputChange}
+            placeholder="Min. 8 caracteres"
+          />
+        </FormField>
       </div>
 
       <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">

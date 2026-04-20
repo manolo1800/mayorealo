@@ -82,6 +82,7 @@ const INITIAL_FORM_DATA: FormData = {
   position: "",
   email: "",
   phone: "",
+  password: "",
 
   // Personal
   personalFirstName: "",
@@ -89,6 +90,7 @@ const INITIAL_FORM_DATA: FormData = {
   personalIdentification: "",
   personalEmail: "",
   personalPhone: "",
+  personalPassword: "",
 }
 
 export function SignupForm() {
@@ -169,6 +171,7 @@ export function SignupForm() {
       newErrors.email = "Email inválido"
     }
     if (!formData.phone.trim()) newErrors.phone = "El teléfono es requerido"
+    if (!formData.password?.trim()) newErrors.password = "La clave de usuario es requerida"
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -188,6 +191,7 @@ export function SignupForm() {
       newErrors.personalEmail = "Email inválido"
     }
     if (!formData.personalPhone.trim()) newErrors.personalPhone = "El teléfono es requerido"
+    if (!formData.personalPassword?.trim()) newErrors.personalPassword = "La clave de usuario es requerida"
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0

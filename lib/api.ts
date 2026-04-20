@@ -38,12 +38,14 @@ interface FormData {
   position: string;
   email: string;
   phone: string;
+  password?: string;
   // Personal (B2C)
   personalFirstName: string;
   personalLastName: string;
   personalIdentification: string;
   personalEmail: string;
   personalPhone: string;
+  personalPassword?: string;
 }
 
 // ---------- Helpers ----------
@@ -89,6 +91,7 @@ interface B2BPayload {
     identificationType?: string;
     phone?: string;
     email: string;
+    password?: string;
   };
   legalRepresentative: {
     position: string;
@@ -118,6 +121,7 @@ function buildB2BPayload(formData: FormData): B2BPayload {
       identificationType: formData.identificationType || undefined,
       phone: formData.phone || undefined,
       email: formData.email,
+      password: formData.password,
     },
     legalRepresentative: {
       position: formData.position,
@@ -156,6 +160,7 @@ interface B2CPayload {
     identificationNumber: string;
     phone?: string;
     email: string;
+    password?: string;
   };
 }
 
@@ -167,6 +172,7 @@ function buildB2CPayload(formData: FormData): B2CPayload {
       identificationNumber: formData.personalIdentification,
       phone: formData.personalPhone || undefined,
       email: formData.personalEmail,
+      password: formData.personalPassword,
     },
   };
 }

@@ -82,6 +82,16 @@ export function LegalRepresentativeStep({ formData, handleInputChange, errors }:
         <FormField label="Teléfono" error={errors.phone}>
           <Input name="phone" value={formData.phone} onChange={handleInputChange} placeholder="+58 212 1234567" />
         </FormField>
+
+        <FormField label="Clave de Usuario" error={errors.password}>
+          <Input 
+            name="password" 
+            type="password" 
+            value={formData.password} 
+            onChange={handleInputChange} 
+            placeholder="Min. 8 caracteres" 
+          />
+        </FormField>
       </div>
 
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
